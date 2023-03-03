@@ -53,7 +53,10 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
-    //your code here
+    buttons[1][2].setLabel("You Lose");
+    for(int i = 0; i < mines.size(); i++){
+      mines.get(i).clicked = true;
+    }
 }
 public void displayWinningMessage()
 {
