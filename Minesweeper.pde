@@ -115,7 +115,9 @@ public class MSButton
     // called by manager
     public void mousePressed () 
     {
-        clicked = true;
+        if(mouseButton == LEFT){
+          clicked = true;
+        }
         if(mouseButton == RIGHT){
           flagged = !flagged;
         } else if(mines.contains(this)){
@@ -138,13 +140,12 @@ public class MSButton
     {    
         if (flagged)
             fill(0);
-        else if( clicked && mines.contains(this) ) 
+        else if(clicked && mines.contains(this)) 
             fill(255,0,0);
         else if(clicked)
             fill( 200 );
         else 
-            fill( 100 );
-
+            fill(100);
         rect(x, y, width, height);
         fill(0);
         text(myLabel,x+width/2,y+height/2);
