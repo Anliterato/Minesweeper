@@ -18,9 +18,6 @@ void setup ()
         buttons[r][c] = new MSButton(r,c);
       }
     }
-    
-    
-    
     setMines();
 }
 public void setMines()
@@ -124,16 +121,13 @@ public class MSButton
         } else if(mines.contains(this)){
           displayLosingMessage();
         } else if(countMines(myRow,myCol) > 0){
-          int neighborCount = countMines(myRow,myCol);
-          myLabel = Integer.toString(neighborCount);
+          myLabel = "lol";
         } else {
           for(int r = myRow - 1; r <= myRow + 1; r++){
             for(int c = myCol - 1; c <= myCol + 1; c++){
               if(isValid(r,c) && !buttons[r][c].clicked){
-                if(!mines.contains(buttons[r][c])){
-                  if(r != myRow || c!= myCol){
+                if(!mines.contains(buttons[r][c]) && r != myRow || c!= myCol){
                     buttons[r][c].mousePressed(); 
-                  }
                 }
               }
             }
