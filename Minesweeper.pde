@@ -61,7 +61,7 @@ public void displayLosingMessage()
   buttons[9][12].setLabel("s");
   buttons[9][13].setLabel("e");
     for(int i = 0; i < mines.size(); i++){
-      mines.get(i).clicked = true;
+      mines.get(i).setClick(true);
     }
 }
 public void displayWinningMessage()
@@ -165,5 +165,8 @@ public class MSButton
     public boolean isFlagged()
     {
         return flagged;
+    }
+    public void setClick(boolean status){
+      clicked = status;
     }
 }
